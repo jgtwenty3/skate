@@ -46,7 +46,6 @@ const TextAndImage = ({ slice }: TextAndImageProps): JSX.Element => {
           foregroundImage={slice.primary.foreground_image}
           backgroundImage={slice.primary.backgroundimage}
         />
-        
       </div>
     </Bounded>
   );
