@@ -7,6 +7,12 @@ import clsx from "clsx";
 import { JSX } from "react";
 import { ParallaxImage } from "./ParallaxImage";
 
+declare module "react" {
+  interface CSSProperties {
+    "--index"?: number;
+  }
+}
+
 /**
  * Props for `TextAndImage`.
  */
@@ -15,7 +21,7 @@ export type TextAndImageProps = SliceComponentProps<Content.TextAndImageSlice>;
 /**
  * Component for "TextAndImage" Slices.
  */
-const TextAndImage = ({ slice }: TextAndImageProps): JSX.Element => {
+const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
   const theme = slice.primary.theme;
   return (
     <Bounded
@@ -27,6 +33,7 @@ const TextAndImage = ({ slice }: TextAndImageProps): JSX.Element => {
         theme === "1Blue" && "bg-texture bg-brand-blue text-white",
       
       )}
+      style={{ "--index": index }}
     >
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-24">
         <div className={clsx("flex flex-col items-center gap-8 text-center md:items-start md:text-left",
