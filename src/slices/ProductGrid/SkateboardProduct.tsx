@@ -59,7 +59,7 @@ export async function SkateboardProduct({id}: Props) {
         <div className='-mb-1 overflow-hidden py-4'>
         <Scribble
           className="absolute inset-0 h-full w-full"
-          color="white"
+          color="black"
         />
             <PrismicNextImage alt = "" field = {product.data.image} width={150} className=" mx-auto w-[58%] origin-top transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-150"/>
         </div>
